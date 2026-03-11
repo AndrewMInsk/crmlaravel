@@ -7,7 +7,7 @@ services:
     ports:
       - 8876:80
     environment:
-      - NGINX_HOST=foobar.com
+      - NGINX_HOST=localhost
       - NGINX_PORT=80
     container_name: andrew_nginx
     depends_on:
@@ -16,6 +16,8 @@ services:
     build:
         context: .
         dockerfile: _docker/app/Dockerfile
+    environment:
+      - PHP_IDE_CONFIG=serverName=crm_app
     volumes:
       - ./:/var/www
     depends_on:
@@ -27,7 +29,7 @@ services:
     volumes:
         - ./_docker/db/tmp:/var/lib/mysql
     environment:
-        MYSQL_DATABASE: db_docker
+        MYSQL_DATABASE: db_docker2
         MYSQL_ROOT_PASSWORD: root
     ports:
         - 8101:3306
