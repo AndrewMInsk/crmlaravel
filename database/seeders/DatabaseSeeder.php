@@ -8,6 +8,8 @@ use App\Models\User;
 use Database\Factories\TicketFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +20,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(1)->create();
+        Permission::create(['name' => 'read_tickets']);
+        $role = Role::create(['name' => 'writer']);
+        $role->givePermissionTo('read_tickets');
+        User::factory(1)->make()->each(function ($user) {
+
+        $user->assignRole('writer');
+        });
+
         Customer::factory(10)->create();
         Ticket::factory(10)->create();
     }
