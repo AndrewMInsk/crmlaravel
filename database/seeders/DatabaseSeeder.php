@@ -20,12 +20,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Permission::create(['name' => 'read_tickets']);
-        $role = Role::create(['name' => 'writer']);
-        $role->givePermissionTo('read_tickets');
-        User::factory(1)->make()->each(function ($user) {
-
-        $user->assignRole('writer');
+        $permission = Permission::findOrCreate('read_tickets', 'web');
+        $role = Role::findOrCreate('manager', 'web');
+        $role->givePermissionTo($permission);
+        User::factory(2)->create()->each(function ($user) {
+            $user->assignRole('manager');
         });
 
         Customer::factory(10)->create();
