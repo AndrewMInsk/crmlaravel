@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Ticket;
 use App\Models\User;
+use Database\Factories\TicketFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,9 +19,6 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        Ticket::factory(10)->create();
     }
 }

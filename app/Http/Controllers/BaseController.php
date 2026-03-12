@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\ServiceInterface;
+
+use App\Services\Widget\MainService;
 
 class BaseController extends Controller
 {
-    public function __construct(public ServiceInterface $service){
+    public function __construct(public MainService $service){
 
     }
 }
