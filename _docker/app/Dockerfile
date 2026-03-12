@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
       docker-php-ext-install zip && \
       pecl install xdebug && \
       docker-php-ext-enable xdebug && \
+      apt update && apt install -y nodejs npm && \
       apt-get clean && \
       rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

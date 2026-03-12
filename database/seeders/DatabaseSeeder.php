@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Customer;
 use App\Models\Ticket;
 use App\Models\User;
 use Database\Factories\TicketFactory;
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        Customer::factory(10)->create();
         Ticket::factory(10)->create();
     }
 }

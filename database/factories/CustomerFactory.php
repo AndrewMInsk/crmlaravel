@@ -9,23 +9,20 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends Factory<Ticket>
  */
-class TicketFactory extends Factory
+class CustomerFactory extends Factory
 {
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
-    protected $model = Ticket::class;
+    protected $model = Customer::class;
     public function definition(): array
     {
-        $statuses = ['new', 'in_work', 'done'];
         return [
-            'theme' => fake()->city(),
+            'email' => fake()->email(),
             'phone' => fake()->phoneNumber(),
-            'status' => $statuses[random_int(0, count($statuses) - 1)],
-            'text' => fake()->text(),
-            'customer_id' => Customer::all()->random()->id,
+            'name' => fake()->name(),
 
         ];
     }
