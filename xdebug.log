@@ -6545,3 +6545,59 @@
 
 [8] Log closed at 2026-03-12 14:16:06.242719
 
+[7] Log opened at 2026-03-12 14:19:52.999268
+[7] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.7'
+[7] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[7] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[7] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[7] [Step Debug] INFO: Client host discovered through HTTP header, connecting to 172.21.0.1:9033.
+[7] [Step Debug] WARN: Creating socket for '172.21.0.1:9033', poll success, but error: Operation now in progress (29).
+[7] [Step Debug] WARN: Could not connect to client host discovered through HTTP headers, connecting to configured address/port: host.docker.internal:9033.
+[7] [Step Debug] WARN: Creating socket for 'host.docker.internal:9033', poll success, but error: Operation now in progress (29).
+[7] [Step Debug] ERR: Could not connect to debugging client. Tried: 172.21.0.1:9033 (from REMOTE_ADDR HTTP header), host.docker.internal:9033 (fallback through xdebug.client_host/xdebug.client_port).
+[7] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[7] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[7] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[7] [Step Debug] INFO: Client host discovered through HTTP header, connecting to 172.21.0.1:9033.
+[7] [Step Debug] WARN: Creating socket for '172.21.0.1:9033', poll success, but error: Operation now in progress (29).
+[7] [Step Debug] WARN: Could not connect to client host discovered through HTTP headers, connecting to configured address/port: host.docker.internal:9033.
+[7] [Step Debug] WARN: Creating socket for 'host.docker.internal:9033', poll success, but error: Operation now in progress (29).
+[7] [Step Debug] ERR: Could not connect to debugging client. Tried: 172.21.0.1:9033 (from REMOTE_ADDR HTTP header), host.docker.internal:9033 (fallback through xdebug.client_host/xdebug.client_port).
+[8] Log opened at 2026-03-12 14:19:53.131818
+[8] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.8'
+[8] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[8] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[8] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[8] [Step Debug] INFO: Client host discovered through HTTP header, connecting to 172.21.0.1:9033.
+[8] [Step Debug] WARN: Creating socket for '172.21.0.1:9033', poll success, but error: Operation now in progress (29).
+[8] [Step Debug] WARN: Could not connect to client host discovered through HTTP headers, connecting to configured address/port: host.docker.internal:9033.
+[8] [Step Debug] WARN: Creating socket for 'host.docker.internal:9033', poll success, but error: Operation now in progress (29).
+[8] [Step Debug] ERR: Could not connect to debugging client. Tried: 172.21.0.1:9033 (from REMOTE_ADDR HTTP header), host.docker.internal:9033 (fallback through xdebug.client_host/xdebug.client_port).
+[8] Log closed at 2026-03-12 14:19:53.150007
+
+[8] Log opened at 2026-03-12 14:19:53.150396
+[8] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.8'
+[8] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[8] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[8] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[8] [Step Debug] INFO: Client host discovered through HTTP header, connecting to 172.21.0.1:9033.
+[8] [Step Debug] WARN: Creating socket for '172.21.0.1:9033', poll success, but error: Operation now in progress (29).
+[8] [Step Debug] WARN: Could not connect to client host discovered through HTTP headers, connecting to configured address/port: host.docker.internal:9033.
+[7] Log closed at 2026-03-12 14:19:53.151873
+
+[7] Log opened at 2026-03-12 14:19:53.152145
+[7] [Config] INFO: Control socket set up successfully: '@xdebug-ctrl.7'
+[7] [Step Debug] INFO: Checking for client discovery headers: 'HTTP_X_FORWARDED_FOR,REMOTE_ADDR'.
+[7] [Step Debug] INFO: Checking header 'HTTP_X_FORWARDED_FOR'.
+[7] [Step Debug] INFO: Checking header 'REMOTE_ADDR'.
+[7] [Step Debug] INFO: Client host discovered through HTTP header, connecting to 172.21.0.1:9033.
+[7] [Step Debug] WARN: Creating socket for '172.21.0.1:9033', poll success, but error: Operation now in progress (29).
+[7] [Step Debug] WARN: Could not connect to client host discovered through HTTP headers, connecting to configured address/port: host.docker.internal:9033.
+[8] [Step Debug] WARN: Creating socket for 'host.docker.internal:9033', poll success, but error: Operation now in progress (29).
+[8] [Step Debug] ERR: Could not connect to debugging client. Tried: 172.21.0.1:9033 (from REMOTE_ADDR HTTP header), host.docker.internal:9033 (fallback through xdebug.client_host/xdebug.client_port).
+[7] [Step Debug] WARN: Creating socket for 'host.docker.internal:9033', poll success, but error: Operation now in progress (29).
+[7] [Step Debug] ERR: Could not connect to debugging client. Tried: 172.21.0.1:9033 (from REMOTE_ADDR HTTP header), host.docker.internal:9033 (fallback through xdebug.client_host/xdebug.client_port).
+[8] Log closed at 2026-03-12 14:19:53.167863
+
+[7] Log closed at 2026-03-12 14:19:53.169928
+
