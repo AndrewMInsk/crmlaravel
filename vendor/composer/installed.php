@@ -1031,6 +1031,24 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'spatie/laravel-package-tools' => array(
+            'pretty_version' => '1.93.0',
+            'version' => '1.93.0.0',
+            'reference' => '0d097bce95b2bf6802fb1d83e1e753b0f5a948e7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-package-tools',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/laravel-permission' => array(
+            'pretty_version' => '7.2.3',
+            'version' => '7.2.3.0',
+            'reference' => '062b0cd8e3a1753fa7a53e468b918710004aa06b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-permission',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'spatie/once' => array(
             'dev_requirement' => false,
             'replaced' => array(

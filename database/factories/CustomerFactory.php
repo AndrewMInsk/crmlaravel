@@ -21,7 +21,7 @@ class CustomerFactory extends Factory
     {
         return [
             'email' => fake()->email(),
-            'phone' => fake()->phoneNumber(),
+            'phone' => fake()->e164PhoneNumber(),
             'name' => fake()->name(),
 
         ];
