@@ -2,10 +2,15 @@
 
 use App\Http\Controllers\Index\IndexController;
 use Illuminate\Support\Facades\Route;
-Route::get('/', [IndexController::class, 'index'])->name('home.index'); // стандартный метод
+use Spatie\Permission\Middleware\RoleMiddleware;
 
-    Route::group(['middleware' => ['role:manager']], function () {
+Route::get('/', [IndexController::class, 'index'])->name('home.index');
+Route::get('/manager', [\App\Http\Controllers\Manager\IndexController::class, 'index'])->name('home.manager');
+Route::get('/widget', \App\Http\Controllers\Widget\IndexController::class)->name('home.widget'); // однометодный контроллер
 
-        Route::get('/widget', \App\Http\Controllers\Widget\IndexController::class)->name('home.widget'); // однометодный контроллер
+Route::group(['middleware' => [RoleMiddleware::using('manager')]], function () {
 
-    });
+
+});
+Auth::routes();
+

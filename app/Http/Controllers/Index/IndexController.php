@@ -6,6 +6,10 @@ use App\Http\Controllers\BaseController;
 
 class IndexController extends BaseController// тут стандартный метод, много методов в одном контроллере
 {
+    public function __construct()
+    {
+
+    }
     public function index(){
         return view('index');
     }

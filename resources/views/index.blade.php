@@ -1,4 +1,5 @@
 @extends('layout.main')
 @section('content')
-    Главная
+
+    Нужно зарегистрироваться и войти под этим пользователем
 @endsection
