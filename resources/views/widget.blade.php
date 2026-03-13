@@ -17,21 +17,21 @@
     <form action="{{route('tickets.store')}}" method="post">
         @csrf
         <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="tet" name="title" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="client" class="form-label">Клиент</label>
+            <input type="text" class="form-control" id="tet" name="client" >
         </div>
         <div class="mb-3">
-            <label for="content" class="form-label">content</label>
-            <textarea type="text" class="form-control" id="tet" name="content" aria-describedby="emailHelp"></textarea>
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="text" class="form-label">Текст</label>
+            <textarea type="text" class="form-control" id="tet" name="text"></textarea>
         </div>
         <div class="mb-3">
-            <label for="image" class="form-label">image</label>
-            <input type="text" class="form-control" id="tet" name="image" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="phone" class="form-label">Телефон</label>
+            <input type="text" class="form-control" id="tet" name="phone" >
         </div>
-
+        <div class="mb-3">
+            <label for="client_id" class="form-label">Картинка</label>
+            <input type="text" class="form-control" id="tet" name="client_id" >
+        </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
