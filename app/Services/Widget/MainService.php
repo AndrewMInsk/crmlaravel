@@ -7,6 +7,6 @@ class MainService implements ServiceInterface
 {
     public function store()
     {
-        dd(2);
+        return 333;
     }
 }
