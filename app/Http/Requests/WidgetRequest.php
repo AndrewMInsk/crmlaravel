@@ -26,9 +26,9 @@ class WidgetRequest extends FormRequest
             'theme'=>'string',
             'text'=>'string',
 
-            'name'=>'string',
+            'customer_name'=>'string',
             'phone'=>'string|required',
-            'mail'=>'string|required',
+            'email'=>'string|required',
         ];
     }
 }

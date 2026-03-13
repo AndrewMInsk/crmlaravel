@@ -12,9 +12,13 @@ class Customer extends Model
 {
     use SoftDeletes;
     use HasFactory;
-    protected $fillable = ['phone', 'mail', 'name'];
+    protected $fillable = ['phone', 'email', 'customer_name'];
 
     public function getTickets():BelongsToMany{
         return $this->hasMany(Ticket::class);
+    }
+    public function getNameAdd():string
+    {
+        return $this->name;
     }
 }

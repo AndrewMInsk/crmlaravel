@@ -15,7 +15,10 @@ class ApiResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'theme' => $this->theme
+            'text'=>$this->text,
+            'theme' => $this->theme,
+            'customer_name' => $this->resource->getCustomer->customer_name,
         ];
     }
+
 }

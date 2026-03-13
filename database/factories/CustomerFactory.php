@@ -22,7 +22,7 @@ class CustomerFactory extends Factory
         return [
             'email' => fake()->email(),
             'phone' => fake()->e164PhoneNumber(),
-            'name' => fake()->name(),
+            'customer_name' => fake()->name(),
 
         ];
     }

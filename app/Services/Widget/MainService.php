@@ -25,7 +25,6 @@ class MainService implements ServiceInterface
 
         }
         catch (\Exception $e) {
-            dd('error', $e);
             DB::rollBack();
             return $e->getMessage();
         }
