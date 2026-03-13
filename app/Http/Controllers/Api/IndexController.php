@@ -9,8 +9,9 @@ class IndexController extends BaseController
 {
     public function store(WidgetRequest $request)
     {
+        dd('store');
         $data = $request->validated();
         $saveIt = $this->service->store($data);
-        dd('store');
+
     }
 }

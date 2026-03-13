@@ -3,4 +3,5 @@ docker-compose up
 в контейнере 'andrew_app' 
 npm install
 npm run dev
+composer install
 http://localhost:8876/
