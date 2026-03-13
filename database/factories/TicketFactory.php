@@ -22,7 +22,6 @@ class TicketFactory extends Factory
         $statuses = ['new', 'in_work', 'done'];
         return [
             'theme' => fake()->city(),
-            'phone' => fake()->phoneNumber(),
             'status' => $statuses[random_int(0, count($statuses) - 1)],
             'text' => fake()->text(),
             'customer_id' => Customer::all()->random()->id,

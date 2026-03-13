@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('theme');
-            $table->text('text');
-            $table->string('phone');
+            $table->string('theme')->nullable();
+            $table->text('text')->nullable();
+            $table->dateTime('answer_date')->nullable();
             $table->enum('status', ['new', 'in_work', 'done'])->default('new');
             $table->softDeletes();
             $table->unsignedBigInteger('customer_id');

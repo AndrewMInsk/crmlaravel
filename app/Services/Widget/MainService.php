@@ -1,12 +1,34 @@
 <?php
 namespace App\Services\Widget;
 
+use App\Models\Customer;
+use App\Models\Post;
+use App\Models\Ticket;
 use App\Services\ServiceInterface;
+use Illuminate\Support\Facades\DB;
 
 class MainService implements ServiceInterface
 {
-    public function store()
+    public function store($data)
     {
-        return 333;
+        try {
+            DB::beginTransaction();
+
+            $customer = new Customer($data);
+            $customer->save();
+
+            $ticket = new Ticket($data);
+            $ticket->getCustomer()->associate($customer);
+
+            $ticket->save();
+            DB::commit();
+
+        }
+        catch (\Exception $e) {
+            dd('error', $e);
+            DB::rollBack();
+            return $e->getMessage();
+        }
+        return $ticket;
     }
 }

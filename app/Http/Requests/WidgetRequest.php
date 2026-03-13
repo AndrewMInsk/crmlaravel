@@ -23,10 +23,12 @@ class WidgetRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'client'=>'string',
             'theme'=>'string',
             'text'=>'string',
+
+            'name'=>'string',
             'phone'=>'string|required',
+            'mail'=>'string|required',
         ];
     }
 }

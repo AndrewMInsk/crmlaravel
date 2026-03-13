@@ -4,14 +4,15 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\WidgetRequest;
+use App\Http\Resources\ApiResource;
 
 class IndexController extends BaseController
 {
     public function store(WidgetRequest $request)
     {
-        dd('store');
         $data = $request->validated();
-        $saveIt = $this->service->store($data);
+        $ticket = $this->service->store($data);
+        return new ApiResource($ticket);
 
     }
 }
