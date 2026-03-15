@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services\Widget;
 
 use App\Models\Customer;
@@ -18,14 +19,13 @@ class MainService implements ServiceInterface
 
             $customer = Customer::firstOrCreate(['email' => $data['email']], $data);
 
-
             $ticket = new Ticket($data);
             $ticket->getCustomer()->associate($customer);
+            $ticket->addMedia($data['image'])->toMediaCollection('images');
 
             $ticket->save();
             DB::commit();
-        }
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
             DB::rollBack();
             return $e->getMessage();
         }
@@ -33,6 +33,7 @@ class MainService implements ServiceInterface
 
         return $ticket->fresh();
     }
+
     public function dateFilter($period): Collection
     {
         switch ($period) {

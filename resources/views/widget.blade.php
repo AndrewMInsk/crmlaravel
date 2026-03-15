@@ -14,7 +14,7 @@
 
     <div id="response" ></div>
 
-    <form action="{{route('tickets.store')}}" method="post" id="client-form">
+    <form action="{{route('tickets.store')}}" method="post" id="client-form" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="theme" class="form-label">Тема</label>
@@ -49,11 +49,14 @@
         $(document).ready(function() {
             $('#client-form').on('submit', function(e) {
                 e.preventDefault();
+                var formData = new FormData(this);
 
                 $.ajax({
                     url: '{{route('tickets.store')}}',
                     type: 'POST',
-                    data: $(this).serialize(),
+                    data: formData,
+                    processData: false,
+                    contentType: false,
                     success: function(response) {
                         $('#response').html('<p style="color:red;">Запрос создан</p>');
                     },
