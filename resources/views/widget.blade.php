@@ -12,7 +12,7 @@
         </div>
     @endif
 
-    <div id="response"></div>
+    <div id="response" ></div>
 
     <form action="{{route('tickets.store')}}" method="post" id="client-form">
         @csrf
@@ -55,7 +55,7 @@
                     type: 'POST',
                     data: $(this).serialize(),
                     success: function(response) {
-                        $('#response').html('<p>Запрос создан</p>');
+                        $('#response').html('<p style="color:red;">Запрос создан</p>');
                     },
                     error: function(xhr) {
                         if (xhr.status === 422) {
