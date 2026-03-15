@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class WidgetRequest extends FormRequest
 {
@@ -27,8 +29,25 @@ class WidgetRequest extends FormRequest
             'text'=>'string',
 
             'customer_name'=>'string',
-            'phone'=>'string|required',
+            'phone' => 'string|required|regex:/^\+[1-9]\d{1,14}$/',
             'email'=>'string|required',
         ];
+    }
+    
+    public function messages()
+    {
+        return [
+            'phone.regex' => 'Номер телефона должен быть в формате E.164 (например, +14155552671).',
+            'email.required' => 'Email обязателен для заполнения.',
+            'phone.required' => 'Телефон обязателен для заполнения.',
+        ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'errors' => $validator->errors(),
+            'message' => 'Днанные введены неверно'
+        ], 422));
     }
 }
