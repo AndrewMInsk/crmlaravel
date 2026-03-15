@@ -77,7 +77,7 @@
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <img class="form-control" id="image" >
+                        <img class="form-control" id="image" style="    width: 100%;   height: auto;">
                     </div>
                 </div>
                 <div class="modal-footer">
