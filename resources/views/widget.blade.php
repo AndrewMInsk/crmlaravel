@@ -41,8 +41,9 @@
             <label for="image" class="form-label">Картинка</label>
             <input type="file" accept="image/*"  class="form-control" id="tet" name="image"  >
         </div>
+        <div id="response2" ></div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -58,7 +59,7 @@
                     processData: false,
                     contentType: false,
                     success: function(response) {
-                        $('#response').html('<p style="color:red;">Запрос создан</p>');
+                        $('#response, #response2').html('<p style="color:red;">Запрос создан</p>');
                     },
                     error: function(xhr) {
                         if (xhr.status === 422) {
@@ -69,9 +70,9 @@
                                     errorMessage += errors[key][0] + '<br>';
                                 }
                             }
-                            $('#response').html('<p style="color:red;">' + errorMessage + '</p>');
+                            $('#response, #response2').html('<p style="color:red;">' + errorMessage + '</p>');
                         } else {
-                            $('#response').html('<p style="color:red;">Произошла ошибка при создании запроса.</p>');
+                            $('#response, #response2').html('<p style="color:red;">Произошла ошибка при создании запроса.</p>');
                         }
                     }
                 });

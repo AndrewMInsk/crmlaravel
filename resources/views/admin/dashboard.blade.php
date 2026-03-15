@@ -136,7 +136,6 @@
                 data: formData,
                 success: function() {
                     $('#ticketModal').modal('hide');
-                    alert('Заявка успешно обновлена!');
                     location.reload();
                 },
                 error: function() {
