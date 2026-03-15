@@ -14,8 +14,8 @@ class MainService implements ServiceInterface
         try {
             DB::beginTransaction();
 
-            $customer = new Customer($data);
-            $customer->save();
+            $customer = Customer::firstOrCreate(['email' => $data['email']], $data);
+
 
             $ticket = new Ticket($data);
             $ticket->getCustomer()->associate($customer);
