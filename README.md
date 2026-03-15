@@ -23,3 +23,11 @@ http://localhost:8876/api/tickets/statistics?period=day/month/week - фильт�
 
 <iframe width="100%" height="100%" src="http://localhost:8876/widget"></iframe> - что бы это заработало, 
 можно положить этот код в любой HTML файл и открыть его локально.
+
+Зубарев Андрей @2026
+
+Telegram @asiteby
+
++375292518184    
+
+https://a-site.by/    
