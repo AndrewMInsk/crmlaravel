@@ -17,7 +17,7 @@ class Ticket extends Model implements HasMedia
     use SoftDeletes;
     use HasFactory, InteractsWithMedia;
     use Filterable;
-    protected $fillable = ['theme', 'text'];
+    protected $fillable = ['theme', 'text', 'status'];
     public function getCustomer():BelongsTo{
         return $this->belongsTo(Customer::class, 'customer_id');
     }

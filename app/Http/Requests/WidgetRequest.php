@@ -27,11 +27,11 @@ class WidgetRequest extends FormRequest
         return [
             'theme'=>'string',
             'text'=>'string',
-
+            'status'=>'string',
             'customer_name'=>'string',
             'phone' => 'string|required|regex:/^\+[1-9]\d{1,14}$/',
             'email'=>'string|required',
-            'image' => 'image|required|max:2048', 
+            'image' => 'image|max:2048',
 
         ];
     }

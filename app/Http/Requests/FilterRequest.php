@@ -32,6 +32,7 @@ class FilterRequest extends FormRequest
             'email'=>'string',
             'image' => 'image',
             'status' => 'string',
+            'date_from' => 'string',
 
         ];
     }

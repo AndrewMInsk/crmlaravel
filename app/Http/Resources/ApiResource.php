@@ -18,8 +18,11 @@ class ApiResource extends JsonResource
             'text'=>$this->text,
             'theme' => $this->theme,
             'customer_name' => $this->resource->getCustomer->customer_name,
+            'phone' => $this->resource->getCustomer->phone,
+            'email' => $this->resource->getCustomer->email,
             'status' => $this->resource->status,
             'received' => true,
+            'image' => $this->getFirstMediaUrl('images'),
         ];
     }
 

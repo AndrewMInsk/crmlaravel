@@ -16,6 +16,7 @@
         <th>Имя</th>
         <th>Телефон</th>
         <th>Почта</th>
+        <th>Дата создания</th>
         <th>Действия</th>
     </tr>
     </thead>
@@ -27,6 +28,7 @@
             <td>{{$ticket->getCustomer->customer_name}}</td>
             <td>{{$ticket->getCustomer->phone}}</td>
             <td>{{$ticket->getCustomer->email}}</td>
+            <td>{{$ticket->created_at}}</td>
             <td>
                 <button class="btn btn-detail" data-ticket-id="{{$ticket->id}}">Подробнее</button>
             </td>
@@ -57,9 +59,9 @@
                     <div class="form-group">
                         <label for="status">Статус</label>
                         <select class="form-control" id="status" name="status" required>
-                            <option value="new">Новая</option>
-                            <option value="in_work">В работе</option>
-                            <option value="done">Выполнена</option>
+                            <option value="new">New</option>
+                            <option value="in_work">In WORK</option>
+                            <option value="done">DONE</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -73,6 +75,9 @@
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <img class="form-control" id="image" >
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -91,12 +96,15 @@
         $('.btn-detail').on('click', function() {
             var ticketId = $(this).data('ticket-id');
             $.get('/api/tickets/' + ticketId, function(data) {
+                data = data.data;
                 $('#theme').val(data.theme);
                 $('#text').val(data.text);
                 $('#status').val(data.status);
                 $('#customer_name').val(data.customer_name);
                 $('#phone').val(data.phone);
                 $('#email').val(data.email);
+                $('#image').attr('src',data.image);
+
                 $('#ticketModal').modal('show');
             });
         });
