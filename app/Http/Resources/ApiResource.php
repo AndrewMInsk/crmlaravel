@@ -18,6 +18,8 @@ class ApiResource extends JsonResource
             'text'=>$this->text,
             'theme' => $this->theme,
             'customer_name' => $this->resource->getCustomer->customer_name,
+            'status' => $this->resource->status,
+            'received' => true,
         ];
     }
 

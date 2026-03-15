@@ -24,13 +24,14 @@ class MainService implements ServiceInterface
 
             $ticket->save();
             DB::commit();
-
         }
         catch (\Exception $e) {
             DB::rollBack();
             return $e->getMessage();
         }
-        return $ticket;
+        // что бы подтянулся статус
+
+        return $ticket->fresh();
     }
     public function dateFilter($period): Collection
     {
