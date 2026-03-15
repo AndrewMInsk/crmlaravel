@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\Filterable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,6 +16,7 @@ class Ticket extends Model implements HasMedia
 {
     use SoftDeletes;
     use HasFactory, InteractsWithMedia;
+    use Filterable;
     protected $fillable = ['theme', 'text'];
     public function getCustomer():BelongsTo{
         return $this->belongsTo(Customer::class, 'customer_id');

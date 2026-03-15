@@ -9,8 +9,8 @@ use App\Http\Resources\ApiResource;
 use App\Http\Resources\ApiResourcesAll;
 use App\Http\Resources\ErrorResource;
 use App\Models\Ticket;
+use App\Models\Customer;
 use Illuminate\Support\Carbon;
-
 class IndexController extends BaseController
 {
     public const WEEK = 'week';
@@ -26,14 +26,33 @@ class IndexController extends BaseController
         else return (new ErrorResource($ticket)->response()->setStatusCode(500));
 
     }
-    public function stats(BaseRequest $request)
-    {
-        $period = $request->input('period');
+public function stats(BaseRequest $request)
+{
+    $period = $request->input('period');
 
-        $tickets = $this->service->dateFilter($period);
+    $tickets = $this->service->dateFilter($period);
 
 
-        return ApiResourcesAll::collection($tickets)->response()->setStatusCode(200);
+    return ApiResourcesAll::collection($tickets)->response()->setStatusCode(200);
 
-    }
+}
+
+public function show($id)
+{
+    $ticket = Ticket::with('getCustomer')->findOrFail($id);
+    return new ApiResource($ticket);
+}
+
+public function update($id, WidgetRequest $request)
+{
+    $ticket = Ticket::findOrFail($id);
+    $data = $request->validated();
+    $ticket->update($data);
+    $ticket->getCustomer->update([
+        'customer_name' => $data['customer_name'],
+        'phone' => $data['phone'],
+        'email' => $data['email']
+    ]);
+    return new ApiResource($ticket);
+}
 }
