@@ -9,9 +9,9 @@
 @section('content')
     Фильтр
     <form action="{{route('home.admin')}}">
-        <input type="date" name="date_from"  value="{{old('date_from', $_GET['date_from'])}}">
-        <input type="text" placeholder="Телефон" name="phone" value="{{old('phone', $_GET['phone'])}}">
-        <input type="text" placeholder="Почта" name="email"  value="{{old('email', $_GET['email'])}}">
+<input type="date" name="date_from"  value="{{old('date_from', $_GET['date_from'] ?? '')}}">
+<input type="text" placeholder="Телефон" name="phone" value="{{old('phone', $_GET['phone'] ?? '')}}">
+<input type="text" placeholder="Почта" name="email"  value="{{old('email', $_GET['email'] ?? '')}}">
         <select name="status">
             <option value="">По умолчанию</option>
 
@@ -136,6 +136,7 @@
                 data: formData,
                 success: function() {
                     $('#ticketModal').modal('hide');
+                    alert('Заявка успешно обновлена!');
                     location.reload();
                 },
                 error: function() {
