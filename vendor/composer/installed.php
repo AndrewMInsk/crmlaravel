@@ -37,6 +37,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'composer/semver' => array(
+            'pretty_version' => '3.4.4',
+            'version' => '3.4.4.0',
+            'reference' => '198166618906cb2de69b95d7d47e5fa8aa1b2b95',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/./semver',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'cordoval/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -568,6 +577,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'maennchen/zipstream-php' => array(
+            'pretty_version' => '3.2.1',
+            'version' => '3.2.1.0',
+            'reference' => '682f1098a8fddbaf43edac2306a691c7ad508ec5',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../maennchen/zipstream-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'maximebf/debugbar' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -1067,6 +1085,33 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'spatie/image' => array(
+            'pretty_version' => '3.9.4',
+            'version' => '3.9.4.0',
+            'reference' => '6a322b5e9268e3903d4fb6e1ff08b7dcc3aa9429',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/image',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/image-optimizer' => array(
+            'pretty_version' => '1.8.1',
+            'version' => '1.8.1.0',
+            'reference' => '2ad9ac7c19501739183359ae64ea6c15869c23d9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/image-optimizer',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/laravel-medialibrary' => array(
+            'pretty_version' => '11.21.0',
+            'version' => '11.21.0.0',
+            'reference' => 'd6e2595033ffd130d4dd5d124510ab3304794c44',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-medialibrary',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'spatie/laravel-package-tools' => array(
             'pretty_version' => '1.93.0',
             'version' => '1.93.0.0',
@@ -1090,6 +1135,15 @@
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'spatie/temporary-directory' => array(
+            'pretty_version' => '2.3.1',
+            'version' => '2.3.1.0',
+            'reference' => '662e481d6ec07ef29fd05010433428851a42cd07',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/temporary-directory',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'staabm/side-effects-detector' => array(
             'pretty_version' => '1.0.5',

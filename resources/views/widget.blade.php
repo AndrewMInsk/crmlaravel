@@ -39,7 +39,7 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Картинка</label>
-            <input type="text" class="form-control" id="tet" name="image"  >
+            <input type="file" accept="image/*"  class="form-control" id="tet" name="image"  >
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

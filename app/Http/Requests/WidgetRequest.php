@@ -31,6 +31,8 @@ class WidgetRequest extends FormRequest
             'customer_name'=>'string',
             'phone' => 'string|required|regex:/^\+[1-9]\d{1,14}$/',
             'email'=>'string|required',
+            'image' => 'image|required|max:2048', 
+
         ];
     }
     

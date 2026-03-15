@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
       docker-php-ext-install bcmath && \
       docker-php-ext-install gd && \
       docker-php-ext-install zip && \
+      docker-php-ext-install exif && \
       pecl install xdebug && \
       docker-php-ext-enable xdebug && \
       apt update && apt install -y nodejs npm && \
