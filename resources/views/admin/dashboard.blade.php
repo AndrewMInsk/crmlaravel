@@ -3,10 +3,10 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Админка</h1>
+    <h1>Dashboard</h1>
 @stop
 
 @section('content')
-    <p>Тут выведем списки!</p>
+    <p>Welcome to your Admin Dashboard!</p>
 @stop
 

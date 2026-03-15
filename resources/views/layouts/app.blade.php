@@ -36,7 +36,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link "  href="{{route('home.index')}}">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link "  href="{{route('home.manager')}}">Управление</a></li>
+                        <li class="nav-item"><a class="nav-link "  href="{{route('home.admin')}}">Управление</a></li>
                         <li class="nav-item"><a class="nav-link "  href="{{route('home.widget')}}">Виджет</a></li>
                         <!-- Authentication Links -->
                         @guest
