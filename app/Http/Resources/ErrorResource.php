@@ -15,7 +15,7 @@ class ErrorResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'error'=>$this->resource,
+            'errors'=>$this->resource,
 
         ];
     }

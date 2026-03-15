@@ -11,49 +11,51 @@ use App\Http\Resources\ErrorResource;
 use App\Models\Ticket;
 use App\Models\Customer;
 use Illuminate\Support\Carbon;
+
 class IndexController extends BaseController
 {
     public const WEEK = 'week';
     public const MONTH = 'month';
     public const DAY = 'day';
+
     public function store(WidgetRequest $request)
     {
         $data = $request->validated();
         $ticket = $this->service->store($data);
-        if($ticket instanceof Ticket){
+        if ($ticket instanceof Ticket) {
             return new ApiResource($ticket)->response()->setStatusCode(200);
-        }
-        else return (new ErrorResource($ticket)->response()->setStatusCode(500));
+        } else return (new ErrorResource($ticket)->response()->setStatusCode(500));
 
     }
-public function stats(BaseRequest $request)
-{
-    $period = $request->input('period');
 
-    $tickets = $this->service->dateFilter($period);
+    public function stats(BaseRequest $request)
+    {
+        $period = $request->input('period');
+
+        $tickets = $this->service->dateFilter($period);
 
 
-    return ApiResourcesAll::collection($tickets)->response()->setStatusCode(200);
+        return ApiResourcesAll::collection($tickets)->response()->setStatusCode(200);
 
-}
+    }
 
-public function show($id)
-{
-    $ticket = Ticket::with('getCustomer')->findOrFail($id);
-    return new ApiResource($ticket);
-}
+    public function show($id)
+    {
+        $ticket = Ticket::with('getCustomer')->findOrFail($id);
+        return new ApiResource($ticket);
+    }
 
-public function update($id, WidgetRequest $request)
-{
-    $ticket = Ticket::findOrFail($id);
-    $data = $request->validated();
-    $ticket->update($data);
+    public function update($id, WidgetRequest $request)
+    {
+        $ticket = Ticket::findOrFail($id);
+        $data = $request->validated();
+        $ticket->update($data);
 
-    $ticket->getCustomer()->update([
-        'customer_name' => $data['customer_name'],
-        'phone' => $data['phone'],
-        'email' => $data['email']
-    ]);
-    return new ApiResource($ticket);
-}
+        $ticket->getCustomer()->update([
+            'customer_name' => $data['customer_name'],
+            'phone' => $data['phone'],
+            'email' => $data['email']
+        ]);
+        return new ApiResource($ticket);
+    }
 }

@@ -12,7 +12,7 @@
         </div>
     @endif
 
-    <div id="response" ></div>
+    <div id="response"></div>
 
     <form action="{{route('tickets.store')}}" method="post" id="client-form" enctype="multipart/form-data">
         @csrf
@@ -39,16 +39,16 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Картинка</label>
-            <input type="file" accept="image/*"  class="form-control" id="tet" name="image"  >
+            <input type="file" accept="image/*" class="form-control" id="tet" name="image">
         </div>
-        <div id="response2" ></div>
+        <div id="response2"></div>
 
         <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#client-form').on('submit', function(e) {
+        $(document).ready(function () {
+            $('#client-form').on('submit', function (e) {
                 e.preventDefault();
                 var formData = new FormData(this);
 
@@ -58,22 +58,25 @@
                     data: formData,
                     processData: false,
                     contentType: false,
-                    success: function(response) {
+                    success: function (response) {
                         $('#response, #response2').html('<p style="color:red;">Запрос создан</p>');
                     },
-                    error: function(xhr) {
-                        if (xhr.status === 422) {
-                            var errors = xhr.responseJSON.errors;
-                            var errorMessage = '';
-                            for (var key in errors) {
-                                if (errors.hasOwnProperty(key)) {
-                                    errorMessage += errors[key][0] + '<br>';
-                                }
+                    error: function (xhr) {
+                        var errors = xhr.responseJSON.errors;
+                        var errors2 = xhr.responseJSON.data;
+                        var errorMessage = '';
+                        for (var key in errors) {
+                            if (errors.hasOwnProperty(key)) {
+                                errorMessage += errors[key][0] + '<br>';
                             }
-                            $('#response, #response2').html('<p style="color:red;">' + errorMessage + '</p>');
-                        } else {
-                            $('#response, #response2').html('<p style="color:red;">Произошла ошибка при создании запроса.</p>');
                         }
+                        for (var key in errors2) {
+                            if (errors2.hasOwnProperty(key)) {
+                                errorMessage += errors2[key] + '<br>';
+                            }
+                        }
+                        $('#response, #response2').html('<p style="color:red;">' + errorMessage + '</p>');
+
                     }
                 });
             });
