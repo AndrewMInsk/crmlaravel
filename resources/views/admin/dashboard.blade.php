@@ -7,6 +7,20 @@
 @stop
 
 @section('content')
+    Фильтр
+    <form action="{{route('home.admin')}}">
+        <input type="date" name="date_from"  value="{{old('date_from', $_GET['date_from'])}}">
+        <input type="text" placeholder="Телефон" name="phone" value="{{old('phone', $_GET['phone'])}}">
+        <input type="text" placeholder="Почта" name="email"  value="{{old('email', $_GET['email'])}}">
+        <select name="status">
+            <option value="">По умолчанию</option>
+
+            <option value="new">new</option>
+            <option value="in_work">in_work</option>
+            <option value="done">done</option>
+        </select>
+        <input type="submit">
+    </form>
 <table class="table">
     <thead>
     <tr>

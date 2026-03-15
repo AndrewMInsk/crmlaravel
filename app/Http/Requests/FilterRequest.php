@@ -25,15 +25,14 @@ class FilterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'theme'=>'string',
-            'text'=>'string',
-            'customer_name'=>'string',
-            'phone' => 'string',
-            'email'=>'string',
-            'image' => 'image',
-            'status' => 'string',
-            'date_from' => 'string',
-
+            'theme' => 'nullable|string',
+            'text' => 'nullable|string',
+            'customer_name' => 'nullable|string',
+            'phone' => 'nullable|string',
+            'email' => 'nullable|string',
+            'image' => 'nullable|image',
+            'status' => 'nullable|string',
+            'date_from' => 'nullable|string',
         ];
     }
     
