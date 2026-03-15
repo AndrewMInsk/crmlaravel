@@ -1,2 +1,3 @@
 /_docker/db/
 node_modules/
+vendor/
