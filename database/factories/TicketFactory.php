@@ -25,7 +25,7 @@ class TicketFactory extends Factory
             'status' => $statuses[random_int(0, count($statuses) - 1)],
             'text' => fake()->text(),
             'customer_id' => Customer::all()->random()->id,
-
+            'created_at' => $this->faker->dateTimeBetween('-1 month', 'now'),
         ];
     }
 }

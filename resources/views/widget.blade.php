@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('content')
-    <h1>Создать запрос. Сделано через API, что бы не нужно было использовать Postman</h1>
+    <h1>Создать запрос.</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -12,9 +12,9 @@
         </div>
     @endif
 
-    <!-- Create Post Form -->
+    <div id="response"></div>
 
-    <form action="{{route('tickets.store')}}" method="post">
+    <form action="{{route('tickets.store')}}" method="post" id="client-form">
         @csrf
         <div class="mb-3">
             <label for="theme" class="form-label">Тема</label>
@@ -44,7 +44,37 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#client-form').on('submit', function(e) {
+                e.preventDefault();
 
+                $.ajax({
+                    url: '{{route('tickets.store')}}',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#response').html('<p>Запрос создан</p>');
+                    },
+                    error: function(xhr) {
+                        if (xhr.status === 422) {
+                            var errors = xhr.responseJSON.errors;
+                            var errorMessage = '';
+                            for (var key in errors) {
+                                if (errors.hasOwnProperty(key)) {
+                                    errorMessage += errors[key][0] + '<br>';
+                                }
+                            }
+                            $('#response').html('<p style="color:red;">' + errorMessage + '</p>');
+                        } else {
+                            $('#response').html('<p style="color:red;">Произошла ошибка при создании запроса.</p>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
 
 

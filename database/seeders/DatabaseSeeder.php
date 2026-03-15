@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             $user->assignRole('manager');
         });
 
-        Customer::factory(10)->create();
-        Ticket::factory(10)->create();
+        Customer::factory(20)->create();
+        Ticket::factory(20)->create();
     }
 }

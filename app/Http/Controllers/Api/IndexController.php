@@ -13,6 +13,9 @@ use Illuminate\Support\Carbon;
 
 class IndexController extends BaseController
 {
+    public const WEEK = 'week';
+    public const MONTH = 'month';
+    public const DAY = 'day';
     public function store(WidgetRequest $request)
     {
         $data = $request->validated();
@@ -25,11 +28,10 @@ class IndexController extends BaseController
     }
     public function stats(BaseRequest $request)
     {
-        $startDate = $request->input('start_date', Carbon::now()->subDays(30)); // 30 дней назад
-        $endDate = $request->input('end_date', Carbon::now()); // Текущая дата
+        $period = $request->input('period');
 
-        // Используем scope для фильтрации постов
-        $tickets = Ticket::createdBetween($startDate, $endDate)->get();
+        $tickets = $this->service->dateFilter($period);
+
 
         return ApiResourcesAll::collection($tickets)->response()->setStatusCode(200);
 
