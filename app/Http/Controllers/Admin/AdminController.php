@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Ticket;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
@@ -16,6 +17,7 @@ class AdminController extends BaseController
 
     }
     public function index(){
-        return view('admin.dashboard');
+        $tickets = Ticket::all();
+        return view('admin.dashboard', compact('tickets'));
     }
 }
