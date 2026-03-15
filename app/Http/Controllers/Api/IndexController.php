@@ -48,7 +48,8 @@ public function update($id, WidgetRequest $request)
     $ticket = Ticket::findOrFail($id);
     $data = $request->validated();
     $ticket->update($data);
-    $ticket->getCustomer->update([
+
+    $ticket->getCustomer()->update([
         'customer_name' => $data['customer_name'],
         'phone' => $data['phone'],
         'email' => $data['email']

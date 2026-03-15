@@ -16,6 +16,7 @@ class ApiResource extends JsonResource
     {
         return [
             'text'=>$this->text,
+            'id'=>$this->id,
             'theme' => $this->theme,
             'customer_name' => $this->resource->getCustomer->customer_name,
             'phone' => $this->resource->getCustomer->phone,

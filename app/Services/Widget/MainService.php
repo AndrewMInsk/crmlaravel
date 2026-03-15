@@ -21,7 +21,9 @@ class MainService implements ServiceInterface
 
             $ticket = new Ticket($data);
             $ticket->getCustomer()->associate($customer);
-            $ticket->addMedia($data['image'])->toMediaCollection('images');
+            if(isset($data['image'])) {
+                $ticket->addMedia($data['image'])->toMediaCollection('images');
+            }
 
             $ticket->save();
             DB::commit();

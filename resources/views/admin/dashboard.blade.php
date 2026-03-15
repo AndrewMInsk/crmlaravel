@@ -80,6 +80,8 @@
                         <img class="form-control" id="image" style="    width: 100%;   height: auto;">
                     </div>
                 </div>
+                <input type="hidden" class="form-control" id="id" name="id" required>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
                     <button type="submit" class="btn btn-primary">Сохранить</button>
@@ -98,6 +100,7 @@
             $.get('/api/tickets/' + ticketId, function(data) {
                 data = data.data;
                 $('#theme').val(data.theme);
+                $('#id').val(data.id);
                 $('#text').val(data.text);
                 $('#status').val(data.status);
                 $('#customer_name').val(data.customer_name);
@@ -111,7 +114,7 @@
 
         $('#ticketForm').on('submit', function(e) {
             e.preventDefault();
-            var ticketId = $('.btn-detail[data-ticket-id]').data('ticket-id');
+            var ticketId = $('#id').val();
             var formData = $(this).serialize();
             $.ajax({
                 url: '/api/tickets/' + ticketId,
