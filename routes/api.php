@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Index\IndexController;
+use App\Http\Controllers\Api\VisitController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Middleware\RoleMiddleware;
 
@@ -10,5 +11,7 @@ Route::post('tickets', [\App\Http\Controllers\Api\IndexController::class, 'store
 
 Route::get('tickets/{id}', [\App\Http\Controllers\Api\IndexController::class, 'show'])->name('tickets.show')->middleware('api');
 Route::put('tickets/{id}', [\App\Http\Controllers\Api\IndexController::class, 'update'])->name('tickets.update')->middleware('api');
+
+Route::post('visits', [VisitController::class, 'store'])->name('visits.store')->middleware('api');
 
 
