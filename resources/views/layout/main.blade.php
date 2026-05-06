@@ -11,6 +11,8 @@
 <div class="container">
     <div class="row">
         <ul class=" nav">
+            <li class="nav-item"><a class="nav-link "  href="{{route('jokes.index')}}">ШУТКИ</a></li>
+            <li class="nav-item"><a class="nav-link "  href="{{route('jokes.fields')}}">Форма на JS</a></li>
             <li class="nav-item"><a class="nav-link "  href="{{route('home.index')}}">Главная</a></li>
             <li class="nav-item"><a class="nav-link "  href="{{route('home.admin')}}">Управление</a></li>
             <li class="nav-item"><a class="nav-link "  href="{{route('home.widget')}}">Виджет</a></li>

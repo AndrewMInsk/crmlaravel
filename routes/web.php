@@ -14,5 +14,6 @@ Route::get('/admin', [AdminController::class, 'index'])->name('home.admin');
 Route::group(['middleware' => [RoleMiddleware::using('manager')]], function () {
 
 });
-Route::get('jokes', [\App\Http\Controllers\JokeController::class, 'update'])->name('jokes.update');
 
+Route::get('/jokes', [\App\Http\Controllers\JokeController::class, 'index'])->name('jokes.index');
+Route::get('/jokes/fields', [\App\Http\Controllers\JokeController::class, 'index'])->name('jokes.fields');
