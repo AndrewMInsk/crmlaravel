@@ -12,4 +12,9 @@ class JokeController extends BaseJokeController
         $jokes = $jokeService->getAllJokes();
         return JokeResource::collection($jokes);
     }
+
+    public function fields()
+    {
+        return view('jokes.fields');
+    }
 }
