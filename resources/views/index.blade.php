@@ -41,7 +41,7 @@
     });
     </code>
 </p>
-<p>Доступы к админке info@remok.by 12345678</p>
+<p><strong>Доступы к админке info@remok.by 12345678</strong>, там решение задачи номер 3</p>
 <p>На сайте есть другие страницы, это остатки с других задач, на них не обращайте внимание</p>
 
 {{--<a href="https://github.com/AndrewMInsk/crmlaravel?tab=readme-ov-file">Описание здесь</a>--}}
