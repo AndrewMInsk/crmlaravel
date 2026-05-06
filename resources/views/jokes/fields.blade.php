@@ -30,7 +30,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Функция для обновления видимости полей в зависимости от выбранного типа
             function updateFieldsVisibility(selectedValues) {
                 var allFields = $('[name]');
                 
